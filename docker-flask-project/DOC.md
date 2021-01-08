@@ -3,6 +3,7 @@
 *Hello and welcome to the **RESTful APIs Project** tutorial! During the next 1.5-2 hours you'll learn how to **structure** your project and **develop** your own **web API**.*
 
 | Taras´s comments (for Ubuntu 18.04.5 LTS)
+| The project is under ~/Documents/ds-fundamentals/docker-flask-project/app
 
 There are lots of different ways to structure your RESTful API. Here we have gathered the **best practices** of project organization. During the tutorial, we will provide an example of a well-structured project to show you how to make your code **organized** and **effective**.
 
@@ -147,6 +148,7 @@ You can see all properties in the schema below:
 
 We need to implement **models** of these **entities**.
 As you can see, some more constants to appear here, so let's put them all to the `settings/constants.py`:
+
 ```python
 import os
 # connection credentials
@@ -158,22 +160,24 @@ MOVIE_FIELDS = ['id', 'name', 'year', 'genre']
 # date of birth format
 DATE_FORMAT = '%d.%m.%Y'
 ```
+
 We'll use [`SQLAlchemy`](https://www.sqlalchemy.org/) toolkit to manipulate all stuff related to the DataBase (defining models, initialization of the DB, etc).
 
 Let's define an **association** table, keeping in mind that our **entities** have **relations** between each other.
 
 > **Important note:**
 To start working with the models we need to initialize the `DB` object. Go to the `core/__init__.py` and define it:
+
 ```python
 from flask_sqlalchemy import SQLAlchemy
 
-
 db = SQLAlchemy()
 ```
+
 Now we need to define the relations between entities. Look through the [documentation](https://docs.sqlalchemy.org/en/13/orm/basic_relationships.html) and then move to the `models/relations.py` and implement an **association table** following the instructions below:
+
 ```python
 from core import db
-
 
 # Table name -> 'association'
 # Columns: 'actor_id' -> db.Integer, db.ForeignKey -> 'actors.id', primary_key = True
@@ -181,7 +185,16 @@ from core import db
 association =
 ```
 
+| My solution:
+| ```
+| association = db.Table('association', db.Base.metadata,
+|     db.Column('actor_id', db.Integer, db.ForeignKey('actors.id'), primary_key = True),
+|     db.Column('movie_id', db.Integer, db.ForeignKey('movies.id'), primary_key = True)
+| )
+| ```
+
 Let's try to create our first model `Actor`. Check out [documentation](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/), then open `models/actor.py` and complete the model's class with defining entities properties:
+
 ```python
 from datetime import datetime as dt
 
@@ -208,13 +221,29 @@ class Actor(db.Model):
     def __repr__(self):
         return '<Actor {}>'.format(self.name)
 ```
+
+| My solution:
+| ```
+| # id -> integer, primary key
+| id = db.Column(db.Integer, primary_key=True)
+| # name -> string, size 50, unique, not nullable
+| name = db.Column(db.String(50), unique=True, nullable=False)
+| # gender -> string, size 11
+| gender = db.Column(db.String(11))
+| # date_of_birth -> date
+| date_of_birth = db.Column(db.DateTime(), index=True, default=dt.now)
+|
+| # Use `db.relationship` method to define the Actor's relationship with Movie.
+| # Set `backref` as 'cast', uselist=True
+| # Set `secondary` as 'association'
+| movies = db.relationship('Movie', backref='cast', uselist=True, secondary='association')
+| ```
+
 And the same procedure for the `Movie` model. Open `models/movie.py` and complete the following code:
 ```python
 from datetime import datetime as dt
-
-from core import db
 from .relations import association
-
+from core import db
 
 class Movie(db.Model):
     __tablename__ = 'movies'
@@ -236,6 +265,23 @@ class Movie(db.Model):
     def __repr__(self):
         return '<Movie {}>'.format(self.name)
 ```
+| My solution
+| ```
+| # id -> integer, primary key
+| id = db.Column(db.Integer, primary_key=True)
+| # name -> string, size 50, unique, not nullable
+| name = db.Column(db.String(50), unique=True, nullable=False)
+| # year -> integer
+| year = db.Column(db.Integer)
+| # genre -> string, size 20
+| genre = db.Column(db.String(20))
+|
+| # Use `db.relationship` method to define the Movie's relationship with Actor.
+| # Set `backref` as 'filmography', uselist=True
+| actors = db.relationship('Actor', backref='filmography', uselist=True, secondary='association')
+| # Set `secondary` as 'association'
+| ```
+
 Upon completing the `Actor` and `Movie` model, let's test them.
 
 > **Important note:**
@@ -255,7 +301,6 @@ from settings.constants import DB_URL
 from core import db
 from models import Actor, Movie
 
-
 app = Flask(__name__, instance_relative_config=False)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # silence the deprecation warning
@@ -271,7 +316,6 @@ from datetime import datetime as dt
 from settings.constants import DB_URL
 from core import db
 from models import Actor, Movie
-
 
 app = Flask(__name__, instance_relative_config=False)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
