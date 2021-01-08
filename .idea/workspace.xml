@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="created folders and files, added additional info" />
+    <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/DOC.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/DOC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/__version__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/_internal_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/adapters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/certs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/compat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/cookies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/exceptions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/help.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/hooks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/packages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/sessions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/status_codes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/structures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/useful links" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,10 +39,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-flask-project/app/core/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/docker-flask-project/app" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/docker-flask-project/useful links" />
+        <option value="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" />
+        <option value="$PROJECT_DIR$/docker-flask-project/app/settings/constants.py" />
+        <option value="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
@@ -20,6 +70,7 @@
     <option name="width" value="1853" />
     <option name="height" value="1055" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -42,6 +93,13 @@
               <item name="ds-fundamentals" type="462c0819:PsiDirectoryNode" />
               <item name="docker-flask-project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ds-fundamentals" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ds-fundamentals" type="462c0819:PsiDirectoryNode" />
+              <item name="docker-flask-project" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -66,6 +124,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="relations" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ds-fundamentals" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/docker-flask-project/app/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.relations" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -84,22 +170,37 @@
       <option name="project" value="LOCAL" />
       <updated>1610021519359</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created folders and files, added additional info">
+      <created>1610021896639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610021896639</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created folders and files, added additional info">
+      <created>1610024859343</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610024859343</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Version Control" weight="0.50215983" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -115,7 +216,32 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docker-flask-project/useful links">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-flask-project/app/settings/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-flask-project/app/models/relations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-flask-project/app/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

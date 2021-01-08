@@ -2,6 +2,8 @@
 
 *Hello and welcome to the **RESTful APIs Project** tutorial! During the next 1.5-2 hours you'll learn how to **structure** your project and **develop** your own **web API**.*
 
+| Taras´s comments (for Ubuntu 18.04.5 LTS)
+
 There are lots of different ways to structure your RESTful API. Here we have gathered the **best practices** of project organization. During the tutorial, we will provide an example of a well-structured project to show you how to make your code **organized** and **effective**.
 
 # Table Of Contents
@@ -26,6 +28,11 @@ This template is based on best structuring patterns, so it can be adapted for an
 # Try it first
 
 Install all the needed libraries. It's better to use `virtualenv` to keep the general `pip` clean. We are assuming you are using anaconda distribution and a 3.7+ version of python.
+
+| Article about Virtual Environment: https://linuxize.com/post/how-to-create-python-virtual-environments-on-ubuntu-18-04/
+| **Activate** `source my-project-env/bin/activate`
+| **Deactivate** `deactivate`
+
 So, you'll need the following packages:
 ```
 SQLAlchemy
@@ -33,6 +40,19 @@ Flask
 Flask_SQLAlchemy
 psycopg2
 ```
+
+| Creating a file with requirements: https://stackoverflow.com/a/33468993/5791355
+| `pip3 freeze > requirements.txt`
+|
+| Installing from a file with requirements: https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-according-to-the-requirements-txt-file-from-a
+| activate virtualenv and then `pip install -r <path/to/requirement.txt>`
+|
+| Installing PosgreSQL: https://www.postgresql.org/download/linux/ubuntu/
+| Uninstalling PostgreSQL: https://askubuntu.com/a/111161/694684
+|
+| Installing PgAdmin: https://www.pgadmin.org/download/pgadmin-4-apt/
+| Uninstalling PgAdmin: https://dba.stackexchange.com/questions/191762/how-to-uninstall-pgadmin4-on-ubuntu-16-04
+
 > **Hint:**
 Create a folder `app` that will serve as a root for your project. Create `requirements.txt` file and put there all packages from bellow - we'll use this file later. Also, you can generate requirements.txt automatically after completing the project.
 
@@ -41,7 +61,7 @@ Create a folder `app` that will serve as a root for your project. Create `requir
 As you already know, the main idea of the project is to develop an API for interaction with the database.
 So, we'll be able to **add/remove/update** records via API routes.
 
-> **A little spoiler for better understanding of the following material:** 
+> **A little spoiler for better understanding of the following material:**
 There will be two entities in the DB: **Actor** and **Movie**, so our main task is to be able to manipulate records and relations between entities through the API.
 We'll get familiar with all the details a little bit later.
 
@@ -65,7 +85,7 @@ app
     │   ├── base.py             - this file contains class Model which handles all data-management operations. Actor and Movie classes will be inherited from it.
     │   ├── actor.py            - Actor entity model.
     │   ├── movie.py            - Movie entity model.
-    |   └── relations.py        - association table for Actor and Movie entities. 
+    |   └── relations.py        - association table for Actor and Movie entities.
     │
     │
     ├── controllers             - this folder contains all commands operations handlers.
@@ -76,13 +96,13 @@ app
     │   
     ├── settings               - here you can store different constant values, connection parameters, etc.
     │   └── constants.py        -  multiple constants storage for their convenient usage.
-    │ 
-    │ 
+    │
+    │
     ├── core                    - folder, which contains core application components.
     │   ├── __init__.py         - initializing our app and DB.
     │   └── routes.py           - application routes (predefined commands).
-    │ 
-    │ 
+    │
+    │
     └── run.py                  - application run file.
 ```
 > Now it's time for you to define the structure by carrying it to your local machine.
@@ -92,18 +112,28 @@ app
 > In this part, we're going to code a bit. I hope, you've already installed [**PyCharm**](https://www.jetbrains.com/pycharm/download/) to your machine.
 Also, you'll need to install [**Docker**](https://www.docker.com).
 
+| Installing Docker on Ubuntu
+
+
 ### Setting up a database
 
-Firstly we need to set up a database we will work with. In order to implement the project, you need to [install **Postgres**](https://www.postgresql.org/download/) locally to your machine. Also, you need to [create a user and database](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) with the following credentials:
+  Firstly we need to set up a database we will work with. In order to implement the project, you need to [install **Postgres**](https://www.postgresql.org/download/) locally to your machine. Also, you need to [create a user and database](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) with the following credentials:
 ```
 DB_USER = 'test_user'
 DB_PASS = 'password'
 DB_NAME = 'test_db'
 ```
+
+| `sudo -u postgres psql`
+| `postgres=# create database test_db;`
+| `postgres=# create user test_user with encrypted password 'password';`
+| `postgres=# grant all privileges on database test_db to test_user;`
+
 Upon this you need to create environmental variable `DB_URL` which we will use to connect to the database. Pass this to your command line:
 ```
 export DB_URL=postgresql+psycopg2://test_user:password@0.0.0.0:5432/test_db
 ```
+
 ### Models
 
 When all environmental details are handled, let's clarify entities we will use in the project.
@@ -190,18 +220,18 @@ class Movie(db.Model):
     __tablename__ = 'movies'
 
     # id -> integer, primary key
-    id = 
+    id =
     # name -> string, size 50, unique, not nullable
     name =  
     # year -> integer
-    year = 
+    year =
     # genre -> string, size 20
-    genre = 
+    genre =
 
     # Use `db.relationship` method to define the Movie's relationship with Actor.
     # Set `backref` as 'filmography', uselist=True
     # Set `secondary` as 'association'
-    actors = 
+    actors =
 
     def __repr__(self):
         return '<Movie {}>'.format(self.name)
@@ -311,9 +341,9 @@ class Model(object):
         row_id: record id
         kwargs: dict with object parameters
         """
-        obj = 
+        obj =
         return commit(obj)
-    
+
     @classmethod
     def delete(cls, row_id):
         """
@@ -323,9 +353,9 @@ class Model(object):
         row_id: record id
         return: int (1 if deleted else 0)
         """
-        obj = 
+        obj =
         return obj
-    
+
     @classmethod
     def add_relation(cls, row_id, rel_obj):  
         """
@@ -341,7 +371,7 @@ class Model(object):
         elif cls.__name__ == 'Movie':
             obj.cast.append(rel_obj)
         return commit(obj)
-            
+
     @classmethod
     def remove_relation(cls, row_id, rel_obj):
         """
@@ -351,7 +381,7 @@ class Model(object):
         row_id: record id
         rel_obj: related object
         """
-        obj = 
+        obj =
         return commit(obj)
 
     @classmethod
@@ -362,18 +392,18 @@ class Model(object):
         cls: class
         row_id: record id
         """
-        obj = 
+        obj =
         return commit(obj)
 ```
 Awesome! Now we can **inherit** our **models** from this class and use its methods as **class methods** of `Actor` and `Movie`! Let's add this feature to `Actor`:
 ```python
     from datetime import datetime as dt
-    
+
     from core import db
     from .base import Model
     from .relations import association
-    
-    
+
+
     class Actor(Model, db.Model):
         . . .
 ```
@@ -381,12 +411,12 @@ Awesome! Now we can **inherit** our **models** from this class and use its metho
 and `Movie`:
 ```python
     from datetime import datetime as dt
-    
+
     from core import db
     from .base import Model
     from .relations import association
-    
-    
+
+
     class Movie(Model, db.Model):
         . . .
 ```
@@ -472,17 +502,17 @@ with app.app_context():
 ```
 The output must be as following:
 ```
-created actor: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109b19590>, 'gender': 'female', 'id': 1, 'date_of_birth': datetime.date(1986, 5, 16), 'name': 'Megan Fox'} 
+created actor: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109b19590>, 'gender': 'female', 'id': 1, 'date_of_birth': datetime.date(1986, 5, 16), 'name': 'Megan Fox'}
 
-created movie: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109f94650>, 'genre': 'action', 'name': 'Transformers', 'year': 2007, 'id': 1} 
+created movie: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109f94650>, 'genre': 'action', 'name': 'Transformers', 'year': 2007, 'id': 1}
 
-updated actor: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109b19590>, 'gender': 'male', 'id': 1, 'date_of_birth': datetime.date(2000, 5, 16), 'name': 'Not Megan Fox'} 
+updated actor: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109b19590>, 'gender': 'male', 'id': 1, 'date_of_birth': datetime.date(2000, 5, 16), 'name': 'Not Megan Fox'}
 
-updated movie: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109f94650>, 'genre': 'bad movie', 'name': 'Teenage Mutant Ninja Turtles', 'year': 2014, 'id': 1} 
+updated movie: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x109f94650>, 'genre': 'bad movie', 'name': 'Teenage Mutant Ninja Turtles', 'year': 2014, 'id': 1}
 
-relations list: [<Movie Teenage Mutant Ninja Turtles>, <Movie Transformers>] 
+relations list: [<Movie Teenage Mutant Ninja Turtles>, <Movie Transformers>]
 
-all relations cleared: [] 
+all relations cleared: []
 
 actor deleted: 1
 ```
@@ -533,9 +563,9 @@ def get_all_actors():
     for actor in all_actors:
         act = {k: v for k, v in actor.__dict__.items() if k in ACTOR_FIELDS}
         actors.append(act)
-    return make_response(jsonify(actors), 200) 
+    return make_response(jsonify(actors), 200)
 
-  
+
 def get_actor_by_id():
     """
     Get record by id
@@ -546,20 +576,20 @@ def get_actor_by_id():
             row_id = int(data['id'])
         except:
             err = 'Id must be integer'
-            return make_response(jsonify(error=err), 400) 
+            return make_response(jsonify(error=err), 400)
 
         obj = Actor.query.filter_by(id=row_id).first()
         try:
             actor = {k: v for k, v in obj.__dict__.items() if k in ACTOR_FIELDS}
         except:
             err = 'Record with such id does not exist'
-            return make_response(jsonify(error=err), 400) 
+            return make_response(jsonify(error=err), 400)
 
         return make_response(jsonify(actor), 200)
 
     else:
         err = 'No id specified'
-        return make_response(jsonify(error=err), 400) 
+        return make_response(jsonify(error=err), 400)
 
 
 def add_actor():
@@ -570,7 +600,7 @@ def add_actor():
     ### YOUR CODE HERE ###
 
     # use this for 200 response code
-    new_record = 
+    new_record =
     new_actor = {k: v for k, v in new_record.__dict__.items() if k in ACTOR_FIELDS}
     return make_response(jsonify(new_actor), 200)
     ### END CODE HERE ###
@@ -584,7 +614,7 @@ def update_actor():
     ### YOUR CODE HERE ###
 
     # use this for 200 response code
-    upd_record = 
+    upd_record =
     upd_actor = {k: v for k, v in upd_record.__dict__.items() if k in ACTOR_FIELDS}
     return make_response(jsonify(upd_actor), 200)
     ### END CODE HERE ###
@@ -644,33 +674,33 @@ def get_actor_by_id(data):
             row_id = int(data['id'])
         except:
             err = 'Id must be integer'
-            return make_response(jsonify(error=err), 400) 
+            return make_response(jsonify(error=err), 400)
 
         obj = Actor.query.filter_by(id=row_id).first()
         try:
             actor = {k: v for k, v in obj.__dict__.items() if k in ACTOR_FIELDS}
         except:
             err = 'Record with such id does not exist'
-            return make_response(jsonify(error=err), 400) 
+            return make_response(jsonify(error=err), 400)
 
         return make_response(jsonify(actor), 200)
 
     else:
         err = 'No id specified'
-        return make_response(jsonify(error=err), 400) 
+        return make_response(jsonify(error=err), 400)
 
         obj = Actor.query.filter_by(id=row_id).first()
         try:
             actor = {k: v for k, v in obj.__dict__.items() if k in ACTOR_FIELDS}
         except:
             err = 'Record with such id does not exist'
-            return make_response(jsonify(error=err), 400) 
+            return make_response(jsonify(error=err), 400)
 
         return make_response(jsonify(actor), 200)
 
     else:
         err = 'No id specified'
-        return make_response(jsonify(error=err), 400) 
+        return make_response(jsonify(error=err), 400)
 ```
 Now it's time to implement `Movie` operations in the same way:
 ```python
@@ -693,7 +723,7 @@ def get_movie_by_id():
     """
     Get record by id
     """
-    
+
 
 def add_movie():
     """
@@ -711,7 +741,7 @@ def delete_movie():
     """
     Delete movie by id
     """
-    
+
 
 def movie_add_relation():
     """
@@ -802,7 +832,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=False)
     app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # silence the deprecation warning
-    
+
     db.init_app(app)
 
     with app.app_context():
