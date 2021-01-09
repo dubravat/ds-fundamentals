@@ -4,41 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ds-fundamentals.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ds-fundamentals.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="created folders and files, added additional info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/DOC.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/DOC.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests-2.25.1.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/__version__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/_internal_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/adapters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/auth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/certs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/compat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/cookies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/help.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/hooks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/packages.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/sessions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/status_codes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/structures.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/my-project-env/lib/python3.6/site-packages/requests/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/settings/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/settings/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +130,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -198,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610096652623</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="created folders and files, added additional info">
+      <created>1610112121560</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610112121560</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
