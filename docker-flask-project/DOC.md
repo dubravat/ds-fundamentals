@@ -340,6 +340,35 @@ Here is an example of the output:
     <img align="center" width="706" src="https://github.com/DataRootUniversity/ds-fundamentals/blob/master/docker-flask-project/figures/add-actor-raw.png?raw=true">
 </div>
 
+| My solution
+| ```
+| from flask_sqlalchemy import SQLAlchemy
+| from datetime import datetime as dt
+| from flask import Flask
+|
+| from settings.constants import DB_URL
+| from core import db
+| from models.actor import Actor
+| from models.movie import Movie
+|
+| app = Flask(__name__, instance_relative_config=False)
+| app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
+| app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # silence the deprecation warning
+|
+| db.init_app(app)
+|
+| data = {'name': 'Megan Fox', 'gender': 'female', 'date_of_birth': dt.strptime('16.05.1986', '%d.%m.%Y').date()}
+|
+| with app.app_context():
+|     db.create_all()
+|     obj = Actor(**data)
+|     db.session.add(obj)
+|     db.session.commit()
+|     db.session.refresh(obj)
+|     print(obj)
+|     print(obj.__dict__)
+| ```
+
 Also, we recommend that you look through the **documentation** and **test other operations** (delete record, add relations, remove relations, etc) in the same way.
 
 Great! Our models are done. It's time to move on to the more interesting part - **handling of data manipulating operations.**
@@ -352,7 +381,6 @@ However, we need to avoid rewriting the same code two times for both models. So,
 Move to `models/base.py`, follow instructions, and implement needed methods:
 ```python
 from core import db
-
 
 def commit(obj):
     """
@@ -442,11 +470,9 @@ class Model(object):
 Awesome! Now we can **inherit** our **models** from this class and use its methods as **class methods** of `Actor` and `Movie`! Let's add this feature to `Actor`:
 ```python
     from datetime import datetime as dt
-
     from core import db
     from .base import Model
     from .relations import association
-
 
     class Actor(Model, db.Model):
         . . .
@@ -455,7 +481,6 @@ Awesome! Now we can **inherit** our **models** from this class and use its metho
 and `Movie`:
 ```python
     from datetime import datetime as dt
-
     from core import db
     from .base import Model
     from .relations import association
@@ -505,7 +530,6 @@ from sqlalchemy import inspect
 from settings.constants import DB_URL
 from core import db
 from models import Actor, Movie
-
 
 data_actor = {'name': 'Megan Fox', 'gender': 'female', 'date_of_birth': dt.strptime('16.05.1986', '%d.%m.%Y').date()}
 data_actor_upd = {'name': 'Not Megan Fox', 'gender': 'male', 'date_of_birth': dt.strptime('16.05.2000', '%d.%m.%Y').date()}
@@ -561,6 +585,7 @@ all relations cleared: []
 actor deleted: 1
 ```
 Congrats, **Models** module is done!
+
 
 ### Controllers
 

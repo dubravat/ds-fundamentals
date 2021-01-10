@@ -9,6 +9,22 @@ def commit(obj):
     db.session.refresh(obj)
     return obj
 
+def update(obj):
+    """
+    Function for convenient update
+    """
+    db.session.update(obj)
+    return obj
+
+def delete(obj):
+    """
+    Function for convenient delete
+    """
+    db.session.delete(obj)
+    db.session.commit()
+    return obj
+
+
 class Model(object):
     @classmethod
     def create(cls, **kwargs):
@@ -30,8 +46,8 @@ class Model(object):
         row_id: record id
         kwargs: dict with object parameters
         """
-        obj = cls.update(id=row_id, **kwargs)
-        return commit(obj)
+        obj = cls.query.filter_by(id=row_id)
+        return print(obj)
 
     @classmethod
     def delete(cls, row_id):
@@ -42,48 +58,5 @@ class Model(object):
         row_id: record id
         return: int (1 if deleted else 0)
         """
-        obj = cls.query.filter_by(id=row_id).delete()
+        obj = cls.query.filter_by(id=row_id).first()
         return 1 if obj else 0
-
-    @classmethod
-    def add_relation(cls, row_id, rel_obj):
-        """
-        Add relation to object
-
-        cls: class
-        row_id: record id
-        rel_obj: related object
-        """
-        obj = cls.query.filter_by(id=row_id).first()
-        if cls.__name__ == 'Actor':
-            obj.filmography.append(rel_obj)
-        elif cls.__name__ == 'Movie':
-            obj.cast.append(rel_obj)
-        return commit(obj)
-
-    @classmethod
-    def remove_relation(cls, row_id, rel_obj):
-        """
-        Remove certain relation
-
-        cls: class
-        row_id: record id
-        rel_obj: related object
-        """
-        obj = cls.query.filter_by(id=row_id).first()
-        if cls.__name__ == 'Actor':
-            obj.filmography.pop(rel_obj)
-        elif cls.__name__ == 'Movie':
-            obj.cast.pop(rel_obj)
-        return commit(obj)
-
-    @classmethod
-    def clear_relations(cls, row_id):
-        """
-        Remove all relations by id
-
-        cls: class
-        row_id: record id
-        """
-        obj = cls.clear_relations(row_id)
-        return commit(obj)

@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="created folders and files, added additional info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/DOC.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/DOC.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,6 +203,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created folders and files, added additional info" />
     <option name="LAST_COMMIT_MESSAGE" value="created folders and files, added additional info" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/docker-flask-project/app/models/base.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docker-flask-project/useful links">
