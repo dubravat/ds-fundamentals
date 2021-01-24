@@ -9,10 +9,10 @@ from models.actor import Actor
 from models.movie import Movie
 
 data_actor = {'name': 'Megan Fox', 'gender': 'female', 'date_of_birth': dt.strptime('16.05.1986', '%d.%m.%Y').date()}
-data_actor_upd = {'name': 'Megan Not Fox', 'gender': 'male', 'date_of_birth': dt.strptime('09.10.1900', '%d.%m.%Y').date()}
+data_actor_upd = {'name': 'Not Megan Fox', 'gender': 'male', 'date_of_birth': dt.strptime('16.05.2000', '%d.%m.%Y').date()}
 
 data_movie = {'name': 'Transformers', 'genre': 'action', 'year': 2007}
-data_movie_upd = {'name': 'Teenage Mutant Ninja Turtles 2', 'genre': 'bad movie', 'year': 2014}
+data_movie_upd = {'name': 'Teenage Mutant Ninja Turtles', 'genre': 'bad movie', 'year': 2014}
 
 app = Flask(__name__, instance_relative_config=False)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
@@ -22,18 +22,17 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
+    # actor = Actor.create(**data_actor)
+    # print('created actor:', actor.__dict__, '\n')
+    #
+    # movie = Movie.create(**data_movie)
+    # print('created movie:', movie.__dict__, '\n')
 
-    #actor = Actor.create(**data_actor)
-    #print('created actor:', actor.__dict__, '\n')
+    upd_actor = Actor.update(1, **data_actor_upd)
+    print('updated actor:', upd_actor.__dict__, '\n')
 
-    #movie = Movie.create(**data_movie)
-    #print('created movie:', movie.__dict__, '\n')
-
-    #upd_actor = Actor.update(15, **data_actor_upd)
-    #print('updated actor:', upd_actor.__dict__, '\n')
-
-    #upd_movie = Movie.update(1, **data_movie_upd)
-    #print('updated movie:', upd_movie.__dict__, '\n')
+    upd_movie = Movie.update(1, **data_movie_upd)
+    print('updated movie:', upd_movie.__dict__, '\n')
 
     add_rels_actor = Actor.add_relation(1, upd_movie)
     movie_2 = Movie.create(**data_movie)
@@ -43,8 +42,8 @@ with app.app_context():
     # clear_rels_actor = Actor.clear_relations(1)
     # print('all relations cleared:', clear_rels_actor.filmography, '\n')
 
-    #del_actor = Actor.delete(15)
-    #print('actor deleted:', del_actor)
-
-    #del_movie = Movie.delete(4)
-    #print('Movie deleted:', del_movie)
+    # del_actor = Actor.delete(15)
+    # print('Actor deleted:', del_actor)
+    #
+    # del_movie = Movie.delete(1)
+    # print('Movie deleted:', del_movie)

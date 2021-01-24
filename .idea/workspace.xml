@@ -6,13 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="89b5e3bc-0a8e-443b-8362-dabe9706c0c6" name="Default Changelist" comment="created folders and files, added additional info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/DOC.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/DOC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/controllers/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/controllers/actor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/controllers/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/controllers/movie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/controllers/parse_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/controllers/parse_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/core/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/core/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/actor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/movie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/models/relations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-flask-project/app/settings/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/settings/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-flask-project/app/testing_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/docker-flask-project/app" />

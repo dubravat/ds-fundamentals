@@ -54,6 +54,14 @@ psycopg2
 | Installing PgAdmin: https://www.pgadmin.org/download/pgadmin-4-apt/
 | Uninstalling PgAdmin: https://dba.stackexchange.com/questions/191762/how-to-uninstall-pgadmin4-on-ubuntu-16-04
 
+| Connecting to a DataBase via `sudo -u postgres psql`
+| psql (12.5 (Ubuntu 12.5-1.pgdg18.04+1))
+| Type "help" for help.
+|
+| postgres=# \connect test_db
+| You are now connected to database "test_db" as user "postgres".
+| test_db=#
+
 > **Hint:**
 Create a folder `app` that will serve as a root for your project. Create `requirements.txt` file and put there all packages from bellow - we'll use this file later. Also, you can generate requirements.txt automatically after completing the project.
 
@@ -467,7 +475,17 @@ class Model(object):
         obj =
         return commit(obj)
 ```
-Awesome! Now we can **inherit** our **models** from this class and use its methods as **class methods** of `Actor` and `Movie`! Let's add this feature to `Actor`:
+| My solution
+| ```
+|
+| ```
+
+
+Awesome!
+Now we can **inherit** our **models** from this class and use its methods as **class methods** of `Actor` and `Movie`!
+
+Let's add this feature to `Actor`:
+
 ```python
     from datetime import datetime as dt
     from core import db
@@ -479,6 +497,7 @@ Awesome! Now we can **inherit** our **models** from this class and use its metho
 ```
 
 and `Movie`:
+
 ```python
     from datetime import datetime as dt
     from core import db
@@ -489,6 +508,7 @@ and `Movie`:
     class Movie(Model, db.Model):
         . . .
 ```
+
 Let's test this by repeating the previous test operation but using class method `create`:
 ```python
 from flask import Flask
@@ -587,6 +607,11 @@ actor deleted: 1
 Congrats, **Models** module is done!
 
 
+
+
+
+
+
 ### Controllers
 
 Let's move further and implement the **Controllers** module.
@@ -595,17 +620,29 @@ As we already know, **controllers** can be named as **commands handlers**. In ou
 It's better to split `Actor` and `Movie` controllers to separate files for convenience.
 Data will come to the controller from **API request**, so firstly let's define a function for parsing request data.
 Open `controllers/parse_request.py` and implement a function that **converts request data to `dict`**:
+
 ```python
 from flask import request
-
 
 def get_request_data():
     """
     Get keys & values from request (Note that this method should parse requests with content type "application/x-www-form-urlencoded")
     """
-
     return data
 ```
+
+| My Solution:
+| ```
+| from flask import request
+|
+| def get_request_data():
+|     """
+|     Get keys & values from request (Note that this method should parse requests with content type "application/x-www-form-urlencoded")
+|     """
+|     data = request.form.to_dict()
+|     return data
+| ```
+
 Now we can move to `controllers/actor.py` and implement operations handlers which will deal with the requests for the `Actor` model.
 Don't forget to handle exceptions:
 
@@ -621,7 +658,6 @@ from ast import literal_eval
 from models import Actor, Movie
 from settings.constants import ACTOR_FIELDS     # to make response pretty
 from .parse_request import get_request_data
-
 
 def get_all_actors():
     """
@@ -730,6 +766,7 @@ def actor_clear_relations():
     return make_response(jsonify(rel_actor), 200)
     ### END CODE HERE ###
 ```
+
 > **Important note**
 Don't forget to **test** your functions! You can just **comment** **out** the line with `get_request_data` call and pass a `dict` to the function like this:
 ```python
@@ -771,12 +808,16 @@ def get_actor_by_id(data):
         err = 'No id specified'
         return make_response(jsonify(error=err), 400)
 ```
+
+| My Solution:
+| ```
+|
+| ```
+
 Now it's time to implement `Movie` operations in the same way:
 ```python
 from flask import jsonify, make_response
-
 from ast import literal_eval
-
 from models import Movie, Actor
 from settings.constants import MOVIE_FIELDS
 from .parse_request import get_request_data
@@ -823,6 +864,12 @@ def movie_clear_relations():
     Clear all relations by id
     """
 ```
+
+| My Solution:
+| ```
+|
+| ```
+
 Perfect! The **Controllers** module is done!
 
 ### Core
@@ -922,10 +969,16 @@ app = create_app()
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=8000)
 ```
+
+
+
 ## **Test your app**
 
 In order to test the application, you need to run `run.py` and **debug** in case of errors.
 Then you can use some `GUI` for sending requests like [`Postman`](https://www.getpostman.com/downloads/) or `curl` requests in Python.
+
+| Installing Postman on Ubuntu:
+| https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/
 
 Here are examples of **correct** requests with `200` response status code:
 

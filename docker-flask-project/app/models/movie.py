@@ -18,7 +18,7 @@ class Movie(Model, db.Model):
     # Use `db.relationship` method to define the Movie's relationship with Actor.
     # Set `backref` as 'filmography', uselist=True
     # Set `secondary` as 'association'
-    actors = db.relationship('Actor', backref='filmography', uselist=True, secondary='association')
+    actors = db.relationship('Actor', backref=db.backref('filmography'), uselist=True, secondary='association')
 
     def __repr__(self):
         return '<Movie {}>'.format(self.name)

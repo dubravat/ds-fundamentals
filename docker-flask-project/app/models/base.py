@@ -1,4 +1,6 @@
 from core import db
+from settings.constants import ACTOR_FIELDS
+from settings.constants import MOVIE_FIELDS
 
 def commit(obj):
     """
@@ -23,7 +25,6 @@ def delete(obj):
     db.session.delete(obj)
     db.session.commit()
     return obj
-
 
 
 class Model(object):
@@ -73,9 +74,15 @@ class Model(object):
         row_id: record id
         rel_obj: related object
         """
+
         obj = cls.query.filter_by(id=row_id).first()
+
         if cls.__name__ == 'Actor':
-            obj.filmography.append(rel_obj)
+            rel_actor = {k: v for k, v in obj.__dict__.items() if k in ACTOR_FIELDS}
+            rel_actor['filmography'] = str(rel_obj)
+
         elif cls.__name__ == 'Movie':
-            obj.cast.append(rel_obj)
+            rel_movie = {k: v for k, v in obj.__dict__.items() if k in MOVIE_FIELDS}
+            rel_movie['cast'] = str(rel_obj)
+
         return commit(obj)
